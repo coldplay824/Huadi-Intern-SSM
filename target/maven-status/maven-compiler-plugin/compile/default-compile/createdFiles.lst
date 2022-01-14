@@ -1,0 +1,7 @@
+cn\simple\web\controller\UserController.class
+cn\simple\web\aop\RequestLoggerAspect.class
+cn\simple\web\dao\UserDao.class
+cn\simple\web\service\impl\UserServiceImpl.class
+cn\simple\web\controller\IndexController.class
+cn\simple\web\model\User.class
+cn\simple\web\service\IUserService.class

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace用于与DAO层的接口类进行绑定,这样我们无需实现DAO层的接口
+类,其接口类就能够自动的找到相关的SQL语句进行绑定实现-->
+<mapper namespace="cn.simple.web.dao.UserDao">
+    <insert id="insert" parameterType="User">
+        insert into user (username,password) values (#{username},#{password})
+    </insert>
+    <!--select表示查询,它的id名称必须与DAO层接口的方法名相同,否则无法绑定-->
+    <select id="selectByName" parameterType="string" resultType="User">
+      select * from user where username = #{username}
+     </select>
+
+    <select id="selectById" parameterType="int" resultType="User">
+       select * from user where id = #{id}
+     </select>
+
+    <select id="getAll" resultType="cn.simple.web.model.User">
+        select * from user
+    </select>
+
+
+</mapper>
